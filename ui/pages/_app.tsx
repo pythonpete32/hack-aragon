@@ -5,6 +5,7 @@ import Layout from "../components/Layout/Layout";
 import { Logo } from "../components/Buttons";
 import Sidebar from "../components/Layout/Sidebar";
 import { ViewGridIcon, TerminalIcon } from "@heroicons/react/outline";
+import { Sono } from "@next/font/google";
 
 const navLinks = [
   {
@@ -19,17 +20,28 @@ const navLinks = [
   },
 ];
 
+const sono = Sono({
+  subsets: ["latin"],
+  variable: "--font-sono",
+});
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Providers>
-      <Layout
-        sidebar={
-          <Sidebar logo={<Logo />} navLinks={navLinks} onRoute={console.log} />
-        }
-      >
-        <Component {...pageProps} />
-      </Layout>
-    </Providers>
+    <div className={`${sono.variable} font-sans`}>
+      <Providers>
+        <Layout
+          sidebar={
+            <Sidebar
+              logo={<Logo />}
+              navLinks={navLinks}
+              onRoute={console.log}
+            />
+          }
+        >
+          <Component {...pageProps} />
+        </Layout>
+      </Providers>
+    </div>
   );
 }
 
