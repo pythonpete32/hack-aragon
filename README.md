@@ -1,6 +1,6 @@
-# 🧪 Hack Web3 Boilerplate
+# 🦅 Hack Aragon OSx
 
-> Starting point for hacking a front end for some contracts
+> custom client for Aragon OSx DAOs
 
 ## Getting Started
 
@@ -23,8 +23,6 @@ yarn dev
 ```
 
 Open [http://localhost:42069](http://localhost:42049) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
 ## Learn More
 
