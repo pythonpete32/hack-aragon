@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import DaoCard from "../components/DaoCard";
+import { NewDAOButton } from "../components/Buttons/NewDAOButton";
 
 const daos = [
   {
@@ -47,9 +48,7 @@ const Home: NextPage = () => {
     <>
       <div className="flex flex-col max-w-3xl">
         <div className="flex justify-end my-4">
-          <button className="bg-green-500 hover:bg-green-600 active:scale-90 transform hover:scale-105 text-white py-2 px-4 rounded transition-all duration-200">
-            New DAO
-          </button>
+          <NewDAOButton />
         </div>
         <DaoList />
       </div>
