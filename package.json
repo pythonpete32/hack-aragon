@@ -1,0 +1,17 @@
+{
+  "name": "hack-web3-boilerplate",
+  "private": true,
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "git@github.com:pythonpete32/hack-web3-boilerplate.git",
+  "author": "pythonpete32 <aaron@blackscale.io>",
+  "license": "MIT",
+  "workspaces": [
+    "ui",
+    "contracts",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "yarn --cwd ui dev"
+  }
+}
