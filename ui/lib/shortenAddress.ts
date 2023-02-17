@@ -1,6 +1,4 @@
-import { Address } from "wagmi";
-
-export function shortenAddress(address: Address, charsLength = 4) {
+export function shortenAddress(address: string, charsLength = 4) {
   const prefixLength = 2; // "0x"
   if (!address) {
     return "";
