@@ -22,44 +22,6 @@ const { chains, provider, webSocketProvider } = configureChains(
   ]
 );
 
-const rainbowWeb3AuthConnector = ({ chains }: any) => ({
-  id: "web3auth",
-  name: "Web3Auth",
-  iconUrl: "https://web3auth.io/images/w3a-L-Favicon-1.svg",
-  iconBackground: "#fff",
-  createConnector: () => {
-    const connector = new Web3AuthConnector({
-      chains: chains,
-      options: {
-        socialLoginConfig: {},
-        enableLogging: true,
-        clientId: process.env.NEXT_PUBLIC_WEB3AUTH_ID as string, // Get your own client id from https://dashboard.web3auth.io
-        network: "testnet",
-        chainId: "0x5",
-      },
-    });
-    connector.web3AuthInstance?.addPlugin(
-      new TorusWalletConnectorPlugin({
-        torusWalletOpts: {
-          buttonPosition: "top-right",
-        },
-        walletInitOptions: {
-          whiteLabel: {
-            theme: { isDark: true, colors: { primary: "#00a8ff" } },
-            logoDark: "https://web3auth.io/images/w3a-L-Favicon-1.svg",
-            logoLight: "https://web3auth.io/images/w3a-D-Favicon-1.svg",
-          },
-          useWalletConnect: true,
-          enableLogging: true,
-        },
-      })
-    );
-    return {
-      connector,
-    };
-  },
-});
-
 const connectors = connectorsForWallets([
   {
     groupName: "Recommended",
@@ -71,7 +33,6 @@ const connectors = connectorsForWallets([
       omniWallet({ chains }),
       argentWallet({ chains }),
       ledgerWallet({ chains }),
-      rainbowWeb3AuthConnector({ chains }),
     ],
   },
 ]);
